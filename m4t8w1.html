@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0B0F2B">
+<meta name="description" content="Falak 26 treasure hunt checkpoint.">
+<title>FALAK 26 · Treasure Hunt</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M4 0 8 4 4 8 0 4z' fill='%236E9BFF'/%3E%3C/svg%3E">
+<style>
+:root{--bg:#0b0f2b;--card:#1c203b;--ink:#ede4d3;--mu:#b3b2c5;--li:rgba(237,228,211,.16);--mag:#ff3d7f;--bad:#ff6568;--a:#6E9BFF;--g:rgba(0,87,255,0.35);--e:cubic-bezier(.22,1,.36,1);
+--fd:Anton,Impact,"Avenir Next Condensed","Arial Narrow",sans-serif-condensed,"Roboto Condensed",sans-serif;
+--fb:Barlow,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+--fm:"Space Mono",ui-monospace,"SF Mono",Menlo,Consolas,"Roboto Mono",monospace}
+*{box-sizing:border-box;margin:0}
+[hidden]{display:none!important}
+html{background:var(--bg)}
+body{min-height:100vh;min-height:100svh;display:flex;justify-content:center;align-items:center;padding:32px 20px;color:var(--mu);font:400 1.05rem/1.55 var(--fb);-webkit-font-smoothing:antialiased;
+background:radial-gradient(90% 45% at 90% -5%,var(--g),transparent 70%),radial-gradient(70% 40% at 0% 105%,rgba(138,92,255,.2),transparent 70%),radial-gradient(60% 35% at 100% 100%,rgba(255,61,127,.12),transparent 70%),var(--bg)}
+body:before,body:after{content:"";position:fixed;pointer-events:none}
+body:before{inset:0;opacity:.5;background:radial-gradient(circle,#ede4d3 .7px,transparent 1.3px) 0 0/97px 97px,radial-gradient(circle,#e6dff6 .5px,transparent 1.1px) 40px 60px/61px 61px;animation:tw 5s ease-in-out infinite alternate}
+body:after{inset:10px;border:1px solid rgba(192,192,192,.2)}
+main{position:relative;z-index:1;width:100%;max-width:440px;display:flex;flex-direction:column;gap:18px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;font:700 .7rem/1 var(--fm);letter-spacing:.2em;text-transform:uppercase;color:var(--ink)}
+.br{display:flex;align-items:center;gap:10px}
+.dm{width:11px;height:11px;background:var(--mag);transform:rotate(45deg);box-shadow:0 0 14px var(--mag)}
+.ch{display:flex;align-items:center;gap:8px;padding:9px 13px;border:1px solid var(--li);border-radius:999px;color:var(--a);background:rgba(11,15,43,.6)}
+.ch i{width:8px;height:8px;border-radius:50%;background:var(--a);box-shadow:0 0 10px var(--a)}
+.k{margin-top:10px;font:400 .68rem/1 var(--fm);letter-spacing:.22em;text-transform:uppercase}
+h1{color:var(--ink);font:700 clamp(2.3rem,11vw,3.3rem)/.98 var(--fd);font-synthesis:none;text-transform:uppercase;letter-spacing:.01em;overflow-wrap:anywhere}
+h1:after{content:"";display:block;width:58px;height:4px;margin-top:14px;border-radius:2px;background:linear-gradient(90deg,var(--a),var(--mag))}
+.cd{background:linear-gradient(180deg,rgba(28,32,59,.94),rgba(28,32,59,.78));border:1px solid var(--li);border-radius:.75rem;padding:20px}
+.lb{display:block;margin-bottom:12px;color:var(--a);font:700 .66rem/1 var(--fm);letter-spacing:.2em;text-transform:uppercase}
+.rd{color:#e6dff6;white-space:pre-wrap}
+#code{display:block;width:100%;height:76px;padding:0;text-align:center;text-indent:.55em;letter-spacing:.55em;color:var(--ink);font:700 2.5rem/1 var(--fm);background:rgba(11,15,43,.75);border:2px solid var(--li);border-radius:.75rem;outline:0;caret-color:var(--a);transition:border-color .2s,box-shadow .2s}
+#code::placeholder{color:rgba(237,228,211,.22)}
+#code:focus{border-color:var(--a);box-shadow:0 0 0 4px var(--g)}
+#code.bad{border-color:var(--bad);animation:sh .45s var(--e)}
+#code:disabled{opacity:.6}
+.bt{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;width:100%;min-height:58px;margin-top:14px;padding:0 20px;border:0;border-radius:999px;background:var(--a);color:var(--bg);font:700 .92rem/1 var(--fm);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;cursor:pointer;box-shadow:0 12px 30px -12px var(--a);touch-action:manipulation;-webkit-tap-highlight-color:transparent;transition:transform .2s var(--e),opacity .2s}
+.bt:active{transform:scale(.97)}
+.bt:disabled{opacity:.55;cursor:default;box-shadow:none}
+.bt:focus-visible,#code:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+#bar{position:absolute;left:0;bottom:0;width:100%;height:4px;background:var(--bg);opacity:.4;transform:scaleX(0);transform-origin:left}
+.wt #bar{animation:cb 2s linear forwards}
+#msg{min-height:1.5em;margin-top:12px;text-align:center;color:var(--bad);font:400 .8rem/1.5 var(--fm)}
+#win{border-color:var(--a);box-shadow:inset 0 0 0 1px var(--a),0 24px 60px -24px var(--a);animation:in .7s var(--e) both}
+#clue{color:var(--ink);font-size:1.15rem;white-space:pre-wrap;overflow-wrap:anywhere}
+#clue:empty{display:none}
+footer{text-align:center;opacity:.7;font:400 .6rem/1.6 var(--fm);letter-spacing:.2em;text-transform:uppercase}
+@keyframes sh{0%,100%{transform:none}20%,60%{transform:translateX(-10px)}40%,80%{transform:translateX(10px)}}
+@keyframes in{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes cb{from{transform:scaleX(1)}to{transform:scaleX(0)}}
+@keyframes tw{to{opacity:.25}}
+@media (prefers-reduced-motion:reduce){*,:before{animation:none!important;transition:none!important}}
+</style></head>
+<body><main>
+<header class="top"><span class="br"><i class="dm"></i>Falak 26</span><span class="ch"><i></i>Blue group</span></header>
+<div><p class="k">Treasure hunt · Checkpoint</p></div>
+<h1>Blue Team: Bleachers</h1>
+<section class="cd"><p class="lb">Riddle</p><p class="rd">Walk the track once. Count every bench you pass. Write the count as a 4-digit number.</p></section>
+<section class="cd" id="lock">
+<label class="lb" for="code">Enter the 4-digit code</label>
+<input id="code" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" enterkeyhint="go" placeholder="····" aria-describedby="msg">
+<button class="bt" id="go" type="button"><span id="gl">Unlock</span><i id="bar"></i></button>
+<p id="msg" role="status" aria-live="polite"></p>
+</section>
+<section class="cd" id="win" hidden aria-live="polite">
+<p class="lb">Unlocked · Next clue</p>
+<p id="clue"></p>
+<a class="bt" id="nx" hidden></a>
+</section>
+<footer>Falak 26 · MIT Bengaluru<br>The Convergence Awaits</footer>
+</main>
+<script>
+const D={"salt": "pwJEH2MvvM8QhMPG7jW6Gg==", "iv": "nDeEp0/cC8pz6jq3", "ct": "e1z2IegnVOYL9dOFuttRwvn2Vi9UeezzclnSP1hR7pXhljPfuNthzHLfBcHuTwPYLNGU0a4="},K="fk-cd-m4t8w1",$=i=>document.getElementById(i),inp=$("code"),go=$("go"),gl=$("gl"),msg=$("msg"),bar=$("bar");
+const b64=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+const st={get(){try{return +localStorage.getItem(K)||0}catch(e){return 0}},set(v){try{v?localStorage.setItem(K,v):localStorage.removeItem(K)}catch(e){}}};
+async function unlock(code){
+  const base=await crypto.subtle.importKey("raw",new TextEncoder().encode(code),"PBKDF2",false,["deriveKey"]);
+  const key=await crypto.subtle.deriveKey({name:"PBKDF2",salt:b64(D.salt),iterations:0x30d40,hash:"SHA-256"},base,{name:"AES-GCM",length:256},false,["decrypt"]);
+  const pt=await crypto.subtle.decrypt({name:"AES-GCM",iv:b64(D.iv)},key,b64(D.ct));
+  return JSON.parse(new TextDecoder().decode(pt));
+}
+let busy=false,until=0;
+function lock(on){busy=on;go.disabled=inp.disabled=on}
+function cooldown(ms){
+  until=Date.now()+ms;st.set(until);
+  go.classList.remove("wt");void go.offsetWidth;bar.style.animationDuration=ms+"ms";go.classList.add("wt");tick();
+}
+function tick(){
+  const left=until-Date.now();
+  if(left>0){lock(true);gl.textContent="Wait "+Math.ceil(left/1000)+"s";setTimeout(tick,Math.min(left,200));return}
+  lock(false);go.classList.remove("wt");gl.textContent="Unlock";st.set(0);
+  if(inp.value){inp.value="";inp.classList.remove("bad");inp.focus()}
+}
+function fail(t,wrong){
+  msg.textContent=t;inp.classList.remove("bad");void inp.offsetWidth;inp.classList.add("bad");
+  if(navigator.vibrate)navigator.vibrate(wrong?[60,40,60]:30);
+  if(wrong)cooldown(2000);
+}
+function show(r){
+  $("lock").hidden=true;$("clue").textContent=r.t||"";
+  if(r.u){const a=$("nx");a.href=r.u;a.textContent=(r.b||"Go to next checkpoint")+" \u2192";a.hidden=false}
+  const w=$("win");w.hidden=false;st.set(0);
+  setTimeout(()=>w.scrollIntoView({behavior:"smooth",block:"center"}),50);
+}
+async function attempt(){
+  if(busy)return;
+  const code=inp.value.replace(/[^0-9]/g,"");
+  if(code.length!==4){fail("Enter all 4 digits.",false);return}
+  lock(true);gl.textContent="Checking\u2026";msg.textContent="";
+  let r=null;try{r=await unlock(code)}catch(e){}
+  if(r){show(r);return}
+  fail("Wrong code. Look again.",true);
+}
+inp.addEventListener("input",()=>{
+  const v=inp.value.replace(/[^0-9]/g,"").slice(0,4);
+  if(v!==inp.value)inp.value=v;
+  inp.classList.remove("bad");msg.textContent="";
+  if(v.length===4)attempt();
+});
+inp.addEventListener("keydown",e=>{if(e.key==="Enter")attempt()});
+go.addEventListener("click",attempt);
+if(!(window.crypto&&crypto.subtle)){lock(true);msg.textContent="Open this page through its https:// QR link."}
+else{const s=st.get()-Date.now();if(s>0&&s<=2000)cooldown(s)}
+</script></body></html>
